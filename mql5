@@ -1,0 +1,110 @@
+mql5
+//+------------------------------------------------------------------+
+//|                                                   Virtual Trendline Scalper |
+//|                                             Copyright 2022, Forex Robot Easy Team |
+//|                                                    https://www.forexroboteasy.com |
+//+------------------------------------------------------------------+
+#property copyright 'Copyright 2022, Forex Robot Easy Team'
+#property link      'https://www.forexroboteasy.com'
+#property version   '1.00'
+#property strict
+
+//+------------------------------------------------------------------+
+//| Global variables                                                  |
+//+------------------------------------------------------------------+
+input double lotSize = 0.01;     // Trading lot size
+input double stopLoss = 50.0;    // Stop loss level in pips
+input double takeProfit = 100.0; // Take profit level in pips
+
+//+------------------------------------------------------------------+
+//| Expert initialization function                                    |
+//+------------------------------------------------------------------+
+int OnInit()
+{
+    // Perform any necessary initialization here
+    return(INIT_SUCCEEDED);
+}
+
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                  |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+{
+    // Perform any necessary cleanup here
+}
+
+//+------------------------------------------------------------------+
+//| Expert start function                                             |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+    // Perform technical analysis to identify scalping opportunities
+    if (IsScalpingOpportunity())
+    {
+        // Place a buy or sell order based on the identified opportunity
+        if (IsBullishTrend())
+        {
+            OpenBuyOrder();
+        }
+        else if (IsBearishTrend())
+        {
+            OpenSellOrder();
+        }
+    }
+}
+
+//+------------------------------------------------------------------+
+//| Check if there is a scalping opportunity in the market            |
+//+------------------------------------------------------------------+
+bool IsScalpingOpportunity()
+{
+    // Implement your scalping strategy here
+    // Return true if there is a scalping opportunity, false otherwise
+    return true;
+}
+
+//+------------------------------------------------------------------+
+//| Check if the market is in a bullish trend                          |
+//+------------------------------------------------------------------+
+bool IsBullishTrend()
+{
+    // Implement your bullish trend identification logic here
+    // Return true if the market is in a bullish trend, false otherwise
+    return true;
+}
+
+//+------------------------------------------------------------------+
+//| Check if the market is in a bearish trend                          |
+//+------------------------------------------------------------------+
+bool IsBearishTrend()
+{
+    // Implement your bearish trend identification logic here
+    // Return true if the market is in a bearish trend, false otherwise
+    return false;
+}
+
+//+------------------------------------------------------------------+
+//| Open a buy order                                                  |
+//+------------------------------------------------------------------+
+void OpenBuyOrder()
+{
+    // Place a buy order with the specified lot size, stop loss, and take profit levels
+    // Implement your order placement logic here
+}
+
+//+------------------------------------------------------------------+
+//| Open a sell order                                                 |
+//+------------------------------------------------------------------+
+void OpenSellOrder()
+{
+    // Place a sell order with the specified lot size, stop loss, and take profit levels
+    // Implement your order placement logic here
+}
+
+//+------------------------------------------------------------------+
+//| Expert stop function                                              |
+//+------------------------------------------------------------------+
+void OnStop()
+{
+    // Perform any necessary cleanup and final actions here
+}
